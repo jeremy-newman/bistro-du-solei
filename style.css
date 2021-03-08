@@ -1,0 +1,15 @@
+body,html{font-size: 18px}
+
+
+/* header */
+	#header {
+		background-color: #b5c9d2;
+		background-size:cover; height:15%;
+		width:100%;
+		padding:25px;
+		box-sizing:border-box;
+		text-align:center;
+		font-size:40px; margin:0px;
+		position:set;
+		color:#483c35;
+		}
