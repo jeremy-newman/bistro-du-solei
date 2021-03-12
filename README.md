@@ -1,1 +1,1 @@
-# bistro-du-solei
+# bistro-du-soleil
