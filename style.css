@@ -10,7 +10,7 @@ body,html {
 		background-color: #e1f2f7;
 		background-size:cover; height:15%;
 		width:100%;
-		padding:1px;
+		padding:10px;
 		box-sizing:border-box;
 		text-align:center;
 		margin:12px;
@@ -24,21 +24,124 @@ body,html {
 
 		.selected{
 			font-size: 24px;
-			color: #1c2f3f;
+			color: #f8f8f2;
 			text-decoration: none;
 			display: inline-block;
 			padding: 10px;
+			background-color: rgba(35, 84, 129, 1);
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
 		}
 
 		.catering{
+			text-align:center;
+			width: 40%;
+			margin: auto;
+			font-size: 24px;
+			color: #1c2f3f;
+		}
+
+		.contact{
 			text-align:center;
 			font-weight: bold;
 			width: 40%;
 			margin: auto;
 			font-size: 24px;
 			color: #1c2f3f;
-			
 		}
+
+		.caption{
+			text-align:center;
+			width: 40%;
+			margin: auto;
+			font-size: 18px;
+			color: #1c2f3f;
+			font-weight: bold;
+		}
+
+		.creds{
+			text-align:center;
+			width: 40%;
+			margin: auto;
+			font-size: 18px;
+			color: #1c2f3f;
+		}
+
+		.bernardo{
+			text-align:center;
+			box-sizing:border-box;
+			width: 500px;
+  		margin: 0 auto;
+			display: block;
+		  margin-left: auto;
+		  margin-right: auto;
+			margin-top: 20px;
+		}
+
+		.harrison{
+			text-align:center;
+			box-sizing:border-box;
+			width: 500px;
+  		margin: 0 auto;
+			display: block;
+		  margin-left: auto;
+		  margin-right: auto;
+		}
+
+
+		#header2{
+				text-align: center;
+				margin: auto;
+				border: 100px;
+				line-height: 1.5;
+				color: #1c2f3f;
+				font-weight: lighter;
+		}
+
+		#header3{
+				text-align: center;
+				width: 570px;
+				margin: auto;
+				border: 100px;
+				line-height: 1.5;
+				color: #1c2f3f;
+		}
+
+		#header4{
+				text-align: center;
+				width: 570px;
+				margin: auto;
+				border: 100px;
+				color: #1c2f3f;
+				font-weight: bold;
+				font-size: 36px;
+		}
+
+		#image{
+				width: 150px;
+				height: 150px;
+				color: #1c2f3f;
+		}
+		#content{
+				/* margin: 5px 5px 50px 50px; */
+				margin: 1% 18% 0% 18%;
+				column-count: 1;
+				font-size: 20px;
+				color: #1c2f3f;
+		}
+
+
+		#gallery{
+				text-align: center;
+		}
+		.mySlides{
+				display:block;
+				width: 450px;
+				height:350px;
+				margin: 1% 34% 1% 34%;
+		}
+
 
 
 		a {
@@ -47,6 +150,8 @@ body,html {
 			padding: 10px;
 			font-size: 24px;
 			text-align: center;
+			background-color: rgba(35, 84, 129, 0);
+			display: inline-block;
 			}
 		a:hover{
 			text-decoration: underline;
