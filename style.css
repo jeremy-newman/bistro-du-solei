@@ -187,6 +187,7 @@ body,html {
 	box-sizing: border-box;
 }
 #pre-title {
+	padding-top: 10px;
 	text-align: center;
 	font-size: 16px;
 }
@@ -238,6 +239,7 @@ body,html {
 			}
 			
 .below {
-	padding-top: 775px;
+	padding-top: 750px;
 	clear:both;
+	padding-bottom: 50px;
 }
