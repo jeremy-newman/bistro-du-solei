@@ -236,3 +236,8 @@ body,html {
 		a:hover{
 			text-decoration: underline;
 			}
+			
+.below {
+	padding-top: 775px;
+	clear:both;
+}
