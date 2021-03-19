@@ -99,9 +99,9 @@
                     <span id="section_header">
                         Personal Information
                     </span>
-                    <h2> Name of Party: <input type="text" name='name' /></h2>
-                    <h2> Number of Guests: <input type="number" name='num_guests' /></h2>
-                    <h2> Phone Number: <input type="text" name='phone' /></h2>
+                    <h2> Name of Party*: <input type="text" name='name' /></h2>
+                    <h2> Number of Guests*: <input type="number" name='num_guests' /></h2>
+                    <h2> Phone Number*: <input type="text" name='phone' /></h2>
                     <div id="column">
                         <span id="section_header">
                             Appetizers
@@ -130,7 +130,7 @@
                             // var num_guests = document.forms[0].num_guests.value;
                             for (i=0; i<prinItems.length; i++) {
                                 post += prinItems[i].name + "</br>";
-                                post += "<select name='app" + i + "' size ='1'>";
+                                post += "<select name='prin" + i + "' size ='1'>";
                                 for (j=0; j < 10; j++) {
                                     post += "<option>" + j + "</option>";
                                 }
@@ -149,7 +149,7 @@
                             // var num_guests = document.forms[0].num_guests.value;
                             for (i=0; i<accItems.length; i++) {
                                 post += accItems[i].name + "</br>";
-                                post += "<select name='app" + i + "' size ='1'>";
+                                post += "<select name='acc" + i + "' size ='1'>";
                                 for (j=0; j < 10; j++) {
                                     post += "<option>" + j + "</option>";
                                 }
@@ -167,7 +167,7 @@
                             // var num_guests = document.forms[0].num_guests.value;
                             for (i=0; i<dessItems.length; i++) {
                                 post += dessItems[i].name + "</br>";
-                                post += "<select name='app" + i + "' size ='1'>";
+                                post += "<select name='dess" + i + "' size ='1'>";
                                 for (j=0; j < 10; j++) {
                                     post += "<option>" + j + "</option>";
                                 }
@@ -176,6 +176,43 @@
                             document.writeln(post);
                         </script>
                     </div>
+                    
+                    <script language="javascript">
+                        function validate() {
+                            if (document.forms[0].name.value == "") {
+                    			alert("Please enter a party name:");
+                    			document.forms[0].name.focus();
+                    			document.forms[0].name.select();
+                    			return false;
+                    		}
+                            
+                            if (document.forms[0].num_guests.value == "") {
+                    			alert("Please enter the number of people in the order:");
+                    			document.forms[0].num_guests.focus();
+                    			document.forms[0].num_guests.select();
+                    			return false;
+                    		}
+                            
+                            regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+                            
+                            if (document.forms[0].phone.value == "") {
+                    			alert("Please enter your phone number:");
+                    			document.forms[0].phone.focus();
+                    			document.forms[0].phone.select();
+                    			return false;
+                    		} else if (!document.forms[0].phone.value.match(regex)) {
+                    			alert("Enter a valid phone number: (xxxxxxxxxx)");
+                    			document.forms[0].phone.focus();
+                    			document.forms[0].phone.select();
+                    			return false;
+                    		}
+                            
+                            // for (i=0; i<appItems.length; i++) {
+                            //     document.forms[0].app.selectedIndex;
+                            // }
+                        }
+                    </script>
+                    
                     <div class="below">
                         <h2> Subtotal: <input type="text" name='subtotal' /></h2>
                         <h2> Connecticut Tax: <input type="text" name='tax' /></h2>
