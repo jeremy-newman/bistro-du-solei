@@ -40,6 +40,32 @@ body,html {
 			display: inline-block;
 		}
 
+		/* home page */
+
+
+		#title2 {
+			text-align: center;
+			font-size: 50px;
+			font-weight: bold;
+			background-color: #Fbfdfe80;
+		}
+
+
+		#section_header2{
+			font-weight: bold;
+			font-size: 38px;
+		}
+		#column3 {
+			float: left;
+			width: 50%;
+			padding: 10px;
+			height: 300px;
+		}
+
+
+
+
+
 /* catering page */
 		.catering{
 			text-align:center;
@@ -196,8 +222,10 @@ body,html {
 	font-size: 50px;
 	font-weight: bold;
 	background-color: #ffeda2;
-
 }
+
+
+
 #section_header{
 	font-weight: bold;
 	font-size: 30px;
@@ -237,7 +265,7 @@ body,html {
 		a:hover{
 			text-decoration: underline;
 			}
-			
+
 .below {
 	padding-top: 750px;
 	clear:both;
