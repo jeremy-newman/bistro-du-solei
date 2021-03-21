@@ -109,10 +109,9 @@
                         </br>
                         <script language="javascript">
                             var post = "";
-                            // var num_guests = document.forms[0].num_guests.value;
                             for (i=0; i<appItems.length; i++) {
                                 post += appItems[i].name + "</br>";
-                                post += "<select name='app" + i + "' size ='1'>";
+                                post += "<select id='app" + i + "' size ='1'>";
                                 for (j=0; j < 10; j++) {
                                     post += "<option>" + j + "</option>";
                                 }
@@ -127,10 +126,9 @@
                         </br>
                         <script language="javascript">
                             var post = "";
-                            // var num_guests = document.forms[0].num_guests.value;
                             for (i=0; i<prinItems.length; i++) {
                                 post += prinItems[i].name + "</br>";
-                                post += "<select name='prin" + i + "' size ='1'>";
+                                post += "<select id='prin" + i + "' size ='1'>";
                                 for (j=0; j < 10; j++) {
                                     post += "<option>" + j + "</option>";
                                 }
@@ -146,10 +144,9 @@
                         </br>
                         <script language="javascript">
                             var post = "";
-                            // var num_guests = document.forms[0].num_guests.value;
                             for (i=0; i<accItems.length; i++) {
                                 post += accItems[i].name + "</br>";
-                                post += "<select name='acc" + i + "' size ='1'>";
+                                post += "<select id='acc" + i + "' size ='1'>";
                                 for (j=0; j < 10; j++) {
                                     post += "<option>" + j + "</option>";
                                 }
@@ -164,10 +161,9 @@
                         </br>
                         <script language="javascript">
                             var post = "";
-                            // var num_guests = document.forms[0].num_guests.value;
                             for (i=0; i<dessItems.length; i++) {
                                 post += dessItems[i].name + "</br>";
-                                post += "<select name='dess" + i + "' size ='1'>";
+                                post += "<select id='dess" + i + "' size ='1'>";
                                 for (j=0; j < 10; j++) {
                                     post += "<option>" + j + "</option>";
                                 }
@@ -178,7 +174,47 @@
                     </div>
                     
                     <script language="javascript">
+                        
+                        $(document).ready(function(){
+                            
+                            $("[name|='num_guests']").change(function(){
+                                printTotals();
+                    		});
+                            
+                            $("#prin8").change(function(){
+                                printTotals();
+                    		});
+                        
+                            $("#prin9").change(function(){
+                                printTotals();
+                    		});
+                        
+                            $("#prin10").change(function(){
+                                printTotals();
+                    		});
+                            
+                            function printTotals() {
+                                add_costs = 0;
+                                
+                                add_costs += 3 * document.getElementById("prin8").selectedIndex;
+                                add_costs += 2 * document.getElementById("prin9").selectedIndex;
+                                add_costs += 4 * document.getElementById("prin10").selectedIndex;
+                                
+                                subtotal = parseFloat(35 * document.forms[0].num_guests.value) + parseFloat(add_costs);
+                                document.forms[0].subtotal.value = subtotal.toFixed(2);
+                                tax = .0735 * document.forms[0].subtotal.value;
+                                document.forms[0].tax.value = tax.toFixed(2);
+                                total = 1.0735 * document.forms[0].subtotal.value;
+                                document.forms[0].total.value = total.toFixed(2);
+                            }
+                            
+                        });
+                        
+                    </script>
+                    
+                    <script language="javascript">
                         function validate() {
+                            
                             if (document.forms[0].name.value == "") {
                     			alert("Please enter a party name:");
                     			document.forms[0].name.focus();
@@ -207,15 +243,85 @@
                     			return false;
                     		}
                             
-                            // for (i=0; i<appItems.length; i++) {
-                            //     document.forms[0].app.selectedIndex;
-                            // }
+                            appCount = 0;
+                            prinCount = 0;
+                            accCount = 0;
+                            dessCount = 0;
+                            c = [true, true, true, true];
+                            
+                            for (i=0; i<appItems.length; i++) {
+                                appCount += document.getElementById("app" + i).selectedIndex;
+                            }
+                            
+                            if (appCount < document.forms[0].num_guests.value) {
+                                diff = document.forms[0].num_guests.value - appCount;
+                                c[0] = confirm("You can still order " + diff + " more appetizers, is this your final order?");
+                                if(c[0] == false) {
+                                    return false
+                                }
+                                
+                            } else if (appCount > document.forms[0].num_guests.value) {
+                                alert("You ordered too many appetizers for the number of guests. " + 
+                                "Please check your order and have the number of guests match the amount ordered in each section.");
+                                return false;
+                            }
+                            
+                            for (i=0; i<prinItems.length; i++) {
+                                prinCount += document.getElementById("prin" + i).selectedIndex;
+                            }
+                            
+                            if (prinCount < document.forms[0].num_guests.value) {
+                                diff = document.forms[0].num_guests.value - prinCount;
+                                c[1] = confirm("You can still order " + diff + " more plats principaux, is this your final order?");
+                                if(c[1] == false) {
+                                    return false
+                                }
+                            } else if (prinCount > document.forms[0].num_guests.value) {
+                                alert("You ordered too many plats principaux for the number of guests. " + 
+                                "Please check your order and have the number of guests match the amount ordered in each section.");
+                                return false;
+                            }
+                            
+                            for (i=0; i<accItems.length; i++) {
+                                accCount += document.getElementById("acc" + i).selectedIndex;
+                            }
+                            
+                            if (accCount < document.forms[0].num_guests.value) {
+                                diff = document.forms[0].num_guests.value - accCount;
+                                c[2] = confirm("You can still order " + diff + " more plats d'accompagnement, is this your final order?");
+                                if(c[2] == false) {
+                                    return false
+                                }
+                            } else if (accCount > document.forms[0].num_guests.value) {
+                                alert("You ordered too many plats d'accompagnement for the number of guests. " + 
+                                "Please check your order and have the number of guests match the amount ordered in each section.");
+                                return false;
+                            }
+                            
+                            for (i=0; i<dessItems.length; i++) {
+                                dessCount += document.getElementById("dess" + i).selectedIndex;
+                            }
+                            
+                            if (dessCount < document.forms[0].num_guests.value) {
+                                diff = document.forms[0].num_guests.value - dessCount;
+                                c[3] = confirm("You can still order " + diff + " more desserts, is this your final order?");
+                                if(c[3] == false) {
+                                    return false
+                                }
+                            } else if (dessCount > document.forms[0].num_guests.value) {
+                                alert("You ordered too many desserts for the number of guests. " + 
+                                "Please check your order and have the number of guests match the amount ordered in each section.");
+                                return false;
+                            }
+                            
+                            return true;
+                            
                         }
                     </script>
                     
                     <div class="below">
                         <h2> Subtotal: <input type="text" name='subtotal' /></h2>
-                        <h2> Connecticut Tax: <input type="text" name='tax' /></h2>
+                        <h2> Connecticut Tax (7.35%): <input type="text" name='tax' /></h2>
                         <h2> Total Cost: <input type="text" name='total' /></h2>
                         <input type = "submit" value = "Make Order" style="width: 20em;  height: 2em;"/>
                     </div>
