@@ -99,9 +99,9 @@
                     <span id="section_header">
                         Personal Information
                     </span>
-                    <h2> Name of Party*: <input type="text" name='name' /></h2>
-                    <h2> Number of Guests*: <input type="number" name='num_guests' /></h2>
-                    <h2> Phone Number*: <input type="text" name='phone' /></h2>
+                    <h2> Name of Party*: <input type="text" name='name' style="font-size:1em;"/></h2>
+                    <h2> Number of Guests*: <input type="number" name='num_guests' style="font-size:1em;"/></h2>
+                    <h2> Phone Number*: <input type="text" name='phone' style="font-size:1em;"/></h2>
                     <div id="column">
                         <span id="section_header">
                             Appetizers
@@ -111,7 +111,7 @@
                             var post = "";
                             for (i=0; i<appItems.length; i++) {
                                 post += appItems[i].name + "</br>";
-                                post += "<select id='app" + i + "' size ='1'>";
+                                post += "<select id='app" + i + "' size ='1' style='font-size:1em;'>";
                                 for (j=0; j < 10; j++) {
                                     post += "<option>" + j + "</option>";
                                 }
@@ -128,7 +128,7 @@
                             var post = "";
                             for (i=0; i<prinItems.length; i++) {
                                 post += prinItems[i].name + "</br>";
-                                post += "<select id='prin" + i + "' size ='1'>";
+                                post += "<select id='prin" + i + "' size ='1' style='font-size:1em;'>";
                                 for (j=0; j < 10; j++) {
                                     post += "<option>" + j + "</option>";
                                 }
@@ -146,7 +146,7 @@
                             var post = "";
                             for (i=0; i<accItems.length; i++) {
                                 post += accItems[i].name + "</br>";
-                                post += "<select id='acc" + i + "' size ='1'>";
+                                post += "<select id='acc" + i + "' size ='1' style='font-size:1em;'>";
                                 for (j=0; j < 10; j++) {
                                     post += "<option>" + j + "</option>";
                                 }
@@ -163,7 +163,7 @@
                             var post = "";
                             for (i=0; i<dessItems.length; i++) {
                                 post += dessItems[i].name + "</br>";
-                                post += "<select id='dess" + i + "' size ='1'>";
+                                post += "<select id='dess" + i + "' size ='1' style='font-size:1em;'>";
                                 for (j=0; j < 10; j++) {
                                     post += "<option>" + j + "</option>";
                                 }
@@ -320,10 +320,10 @@
                     </script>
                     
                     <div class="below">
-                        <h2> Subtotal: <input type="text" name='subtotal' /></h2>
-                        <h2> Connecticut Tax (7.35%): <input type="text" name='tax' /></h2>
-                        <h2> Total Cost: <input type="text" name='total' /></h2>
-                        <input type = "submit" value = "Make Order" style="width: 20em;  height: 2em;"/>
+                        <h2> Subtotal: $<input type="text" name='subtotal' style="font-size:1em;"/></h2>
+                        <h2> Connecticut Tax (7.35%): $<input type="text" name='tax' style="font-size:1em;"/></h2>
+                        <h2> Total Cost: $<input type="text" name='total' style="font-size:1em;"/></h2>
+                        <input type = "submit" value = "Make Order" style="width: 20em;  font-size:1em; height: 2em;"/>
                     </div>
                 </form>
             </div>
