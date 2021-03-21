@@ -102,28 +102,30 @@
                     <h2> Name of Party*: <input type="text" name='name' style="font-size:1em;"/></h2>
                     <h2> Number of Guests*: <input type="number" name='num_guests' style="font-size:1em;"/></h2>
                     <h2> Phone Number*: <input type="text" name='phone' style="font-size:1em;"/></h2>
-                    <div id="column">
+                    <div id="column4">
                         <span id="section_header">
                             Appetizers
                         </span>
-                        </br>
-                        <script language="javascript">
-                            var post = "";
-                            for (i=0; i<appItems.length; i++) {
-                                post += appItems[i].name + "</br>";
-                                post += "<select id='app" + i + "' size ='1' style='font-size:1em;'>";
-                                for (j=0; j < 10; j++) {
-                                    post += "<option>" + j + "</option>";
+                        </br></br>
+                        <span style="font-size:25px">
+                            <script language="javascript">
+                                var post = "";
+                                for (i=0; i<appItems.length; i++) {
+                                    post += appItems[i].name + "</br>";
+                                    post += "<select id='app" + i + "' size ='1' style='font-size:1em;'>";
+                                    for (j=0; j < 10; j++) {
+                                        post += "<option>" + j + "</option>";
+                                    }
+                                    post += "</select></br></br>";
                                 }
-                                post += "</select></br>";
-                            }
-                            document.writeln(post);
-                        </script>
+                                document.writeln(post);
+                            </script>
+                        </span>
                         </br></br>
                         <span id="section_header">
                             Le Plat Principal
                         </span>
-                        </br>
+                        </br></br>
                         <script language="javascript">
                             var post = "";
                             for (i=0; i<prinItems.length; i++) {
@@ -132,16 +134,16 @@
                                 for (j=0; j < 10; j++) {
                                     post += "<option>" + j + "</option>";
                                 }
-                                post += "</select></br>";
+                                post += "</select></br></br>";
                             }
                             document.writeln(post);
                         </script>
                     </div>
-                    <div id="column">
+                    <div id="column4">
                         <span id="section_header">
                             Plat d'Accompagnement
                         </span>
-                        </br>
+                        </br></br>
                         <script language="javascript">
                             var post = "";
                             for (i=0; i<accItems.length; i++) {
@@ -150,7 +152,7 @@
                                 for (j=0; j < 10; j++) {
                                     post += "<option>" + j + "</option>";
                                 }
-                                post += "</select></br>";
+                                post += "</select></br></br>";
                             }
                             document.writeln(post);
                         </script>
@@ -158,7 +160,7 @@
                         <span id="section_header">
                             Desserts
                         </span>
-                        </br>
+                        </br></br>
                         <script language="javascript">
                             var post = "";
                             for (i=0; i<dessItems.length; i++) {
@@ -167,7 +169,7 @@
                                 for (j=0; j < 10; j++) {
                                     post += "<option>" + j + "</option>";
                                 }
-                                post += "</select></br>";
+                                post += "</select></br></br>";
                             }
                             document.writeln(post);
                         </script>
@@ -325,6 +327,7 @@
                         <h2> Total Cost: $<input type="text" name='total' style="font-size:1em;"/></h2>
                         <input type = "submit" value = "Make Order" style="width: 20em;  font-size:1em; height: 2em;"/>
                     </div>
+                    
                 </form>
             </div>
     </body>
