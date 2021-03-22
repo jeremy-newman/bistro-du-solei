@@ -19,17 +19,29 @@
     <script language="javascript">
 
         function validate(){
-            alert("in validate");
-            err = false;
-            every element must be filled
-            with(document.data){
-                if(document.getElementById("name").value == "" ||
-                   document.getElementById("number").value == ""){
-                       alert("Name and Phone Number are required.");
-                       err=true;
-                }
-                return !err;
+            
+            if (document.getElementById("name").value == "") {
+                alert("Name is required.");
+                document.getElementById("name").focus();
+                document.getElementById("name").select();
+                return false;
             }
+            
+            regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+            
+            if (document.getElementById("number").value == "") {
+                alert("Phone Number is required.");
+                document.getElementById("number").focus();
+                document.getElementById("number").select();
+                return false;
+            } else if (!document.getElementById("number").value.match(regex)) {
+                alert("Enter a valid phone number: (xxxxxxxxxx)");
+                document.forms[0].number.focus();
+                document.forms[0].number.select();
+                return false;
+            }
+            
+            return true;
         }
 
     </script>
@@ -85,7 +97,7 @@
                   <option>10+</option>
               </select><br><br>
               Special Requests: <br><br><textarea id="requests" rows="4" cols="50"> </textarea><br><br>
-        	  <button onlick="validate()">Book</button>
+        	  <button onclick="return validate()">Book</button>
         	  </form>
         	  <div id=output></div>
               <!-- footer -->
