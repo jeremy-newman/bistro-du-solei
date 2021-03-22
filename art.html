@@ -3,8 +3,42 @@
     <head>
     <meta charset="utf-8">
         <title>Featured Artist</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <link rel='stylesheet' type="text/css" href="style.css" />
         <style type="text/css">
+            #section-header{
+                text-align: center;
+                margin: auto;
+                font-size: 30px;
+                line-height: 1.5;
+            }
+            #name{
+                text-align: center;
+                margin: auto;
+                font-size:60px;
+            }
+            #image{
+                width: 150px;
+                height: 150px;
+            }
+            #content{
+                margin: 1% 18% 0% 18%;
+                column-count: 1;
+                font-size: 20px;
+            }
+            #body{
+                background-color: #ffffff;
+            }
+            #gallery{
+                text-align: center;
+                display: none;
+            }
+            .mySlides{
+                display:block;
+                width: 30%;
+                padding-left: 35%;
+                padding-right: 35%
+            }
 
         </style>
     </head>
@@ -13,36 +47,26 @@
 
       <!-- header section -->
               <div id='header'>
+                <div id='header'>
                 <a href="index.html">
                   <div>
                     <img src="logo.png" alt="Bistro-Du-Solei Logo" class="logo">
                   </div>
                 </a>
+              </div>
                   <a href="menu.html">Menu</a>
-                  <a href="res.html">Reserevations</a>
+                  <a href="res.html">Reservations</a>
                   <a href="order.html">Order</a>
                   <a href="abt.html">About Us</a>
                   <a class="selected" href="art.html">Featured Artists</a>
                   <a href="catering.html">Catering</a>
               </div>
 
-                <h1  id = "header3">
-                  Harrison Gordon
-                </h1>
-                
-                <h2 id = header4>Between Water and Land
-                  </h2>
+              <br/>
+              <h1  id = "name"><img id=image style="vertical-align:middle" src="harrison.png" alt="Harrison Gordon" width=150px/>     Harrison Gordon</h1>
 
-                <img id=image style="vertical-align:middle" src="harrison.png" alt="Harrison Gordon" width=150px class="harrison" />
-
-              <h2 id = header2>Gallery Opening<br>Sunday, Feb. 23rd, 4-7pm<br>
-                </h2>
-
-
-
-
-
-
+              <h2 id = section-header>Gallery Opening<br>Sunday, Feb. 23rd<br>4-7pm<br>
+                  BETWEEN WATER AND LAND</h2>
             <div id="content">
                 As a 16-year-old, I have only begun my journey as a photographer.
                 I am often discovering new attributes to my style and subjects to photograph.
@@ -54,38 +78,70 @@
                 how to create a photo that moves people. I never settle for just “okay” —
                 I am always working to take my pictures to the next level. As I isolate my
                 interests and hone in on my skills and artistic style, I hope to advance my
-                craft and become ever more engaged in the community.
+                craft and become ever more engaged in the community. <br/>
             </div>
 
-            <div id = "gallery">
+            <!-- <div id="gallery">
                 <img class="mySlides" src="photo1.png">
                 <img class="mySlides" src="photo2.png">
                 <img class="mySlides" src="photo3.png">
 
                 <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
                 <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+            </div> -->
+
+            <div id="gallery">
+                <img class="mySlides" src="photo1.png" alt="H Gordon photo 1" />
+                <img class="mySlides" src="photo2.png" alt="H Gordon photo 2" />
+                <img class="mySlides" src="photo3.png" alt="H Gordon photo 3" />
             </div>
 
+            <br/>
+            <h2 id = section-header>ABOUT HARRISON</h2>
+            <div id="content">
+                Harrison Gordon is an award-winning photographer and currently a junior in high school.
+                He specializes in taking landscape, portrait, and aerial photography: offering personal
+                and business photoshoots and aerial event coverage. <br/><br/>Most recently he endeavored
+                to expand his portraiture collection and skills, offering family photoshoots throughout
+                the holiday season. Prior to this, he took his landscape photography to the next level
+                when he embarked on an expedition with National Geographic and one of their esteemed
+                photographers, Ronan Donovan. They travelled to San Francisco and Yosemite National Park
+                for two weeks of intense photographic challenges, where he was exposed to a multitude
+                of methods and opportunities which drastically improved my skills. <br/><br/> His work has
+                been awarded Best in Show in the Pequot Library Art Show 22 Under 22, and Best
+                Landscape at the Westport Library. In addition, his art is on display as a
+                full-restaurant gallery at Bistro du Soleil in Westport. He loves using his creativity
+                to produce stunning photographs of places and people, especially for the benefit of the community. <br/><br/>
+            </div>
+
+            <h2 id = section-header>CONTACT INFO</h2>
+            <div id="content" style="text-align:center;">
+                WEB: www.hgordonphoto.com<br/>
+                IG: @hgordon_photography<br/>
+                FB: @hgordonphotographer<br/>
+                EMAIL: harrison@hgordonphoto.com<br/><br/><br/><br/>
+
+            </div>
 
             <script>
-                  var slideIndex = 1;
-                  showDivs(slideIndex);
 
-                  function plusDivs(n) {
-                    showDivs(slideIndex += n);
-                  }
+            $(document).ready(function(){
+                toFirstImage();
+            });
 
-                  function showDivs(n) {
-                    var i;
-                    var x = document.getElementsByClassName("mySlides");
-                    if (n > x.length) {slideIndex = 1}
-                    if (n < 1) {slideIndex = x.length}
-                    for (i = 0; i < x.length; i++) {
-                      x[i].style.display = "none";
-                    }
-                    x[slideIndex-1].style.display = "block";
-                  }
-              </script>
+            function toFirstImage(){
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="photo2.png" alt="H Gordon photo 2" />').delay(5000).fadeOut(200, function(){ toSecondImage();});
+            }
+
+            function toSecondImage(){
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="photo3.png" alt="H Gordon photo 3" />').delay(5000).fadeOut(200, function(){ toThirdImage();});
+            }
+
+            function toThirdImage(){
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="photo1.png" alt="H Gordon photo 1" />').delay(5000).fadeOut(200, function(){ toFirstImage();});
+            }
+
+            </script>
 
     </body>
 
