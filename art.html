@@ -35,8 +35,8 @@
             }
             .mySlides{
                 display:block;
-                width: 350px;
-                height:250px;
+                width: 450px;
+                height:350px;
                 margin: 1% 37.5% 1% 37.5%;
             }
 
@@ -130,15 +130,15 @@
             });
 
             function toFirstImage(){
-                $('#gallery').fadeIn(200).html('<img src="photo2.png" alt="H Gordon photo 2" />').delay(5000).fadeOut(200, function(){ toSecondImage();});
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="photo2.png" alt="H Gordon photo 2" />').delay(5000).fadeOut(200, function(){ toSecondImage();});
             }
 
             function toSecondImage(){
-                $('#gallery').fadeIn(200).html('<img src="photo3.png" alt="H Gordon photo 3" />').delay(5000).fadeOut(200, function(){ toThirdImage();});
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="photo3.png" alt="H Gordon photo 3" />').delay(5000).fadeOut(200, function(){ toThirdImage();});
             }
 
             function toThirdImage(){
-                $('#gallery').fadeIn(200).html('<img src="photo1.png" alt="H Gordon photo 1" />').delay(5000).fadeOut(200, function(){ toFirstImage();});
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="photo1.png" alt="H Gordon photo 1" />').delay(5000).fadeOut(200, function(){ toFirstImage();});
             }
 
             </script>
