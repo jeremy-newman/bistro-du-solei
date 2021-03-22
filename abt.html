@@ -5,7 +5,16 @@
         <title>Bistro-Du-Soleil</title>
         <link rel='stylesheet' type="text/css" href="style.css" />
         <style type="text/css">
-
+            #gallery{
+                text-align: center;
+                display: none;
+            }
+            .mySlides{
+                display:block;
+                width: 30%;
+                padding-left: 35%;
+                padding-right: 35%
+            }
         </style>
     </head>
     <body>
@@ -47,9 +56,6 @@
                           <img class="mySlides" src="about41.png">
                           <img class="mySlides" src="about1.png">
                           <img class="mySlides" src="about49.png">
-
-                          <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-                          <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
                       </div>
                   <br>
                   <div class="menu">
@@ -225,27 +231,47 @@
                    </div>
                   </div>
 
-
-
-                              <script>
-                                    var slideIndex = 1;
-                                    showDivs(slideIndex);
-
-                                    function plusDivs(n) {
-                                      showDivs(slideIndex += n);
-                                    }
-
-                                    function showDivs(n) {
-                                      var i;
-                                      var x = document.getElementsByClassName("mySlides");
-                                      if (n > x.length) {slideIndex = 1}
-                                      if (n < 1) {slideIndex = x.length}
-                                      for (i = 0; i < x.length; i++) {
-                                        x[i].style.display = "none";
-                                      }
-                                      x[slideIndex-1].style.display = "block";
-                                    }
-                                </script>
+            <script>
+            
+            $(document).ready(function(){
+                toFirstImage();
+            });
+            
+            function toImage1(){
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="about6.png" alt="AboutUs1" />').delay(5000).fadeOut(200, function(){ toImage2();});
+            }
+            function toImage2(){
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="about2.png" alt="AboutUs2" />').delay(5000).fadeOut(200, function(){ toImage3();});
+            }
+            function toImage3(){
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="about34.png" alt="AboutUs3" />').delay(5000).fadeOut(200, function(){ toImage4();});
+            }
+            function toImage4(){
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="about3.png" alt="AboutUs4" />').delay(5000).fadeOut(200, function(){ toImage5();});
+            }
+            function toImage5(){
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="about21.png" alt="AboutUs5" />').delay(5000).fadeOut(200, function(){ toImage6();});
+            }
+            function toImage6(){
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="about4.png" alt="AboutUs6" />').delay(5000).fadeOut(200, function(){ toImage7();});
+            }
+            function toImage7(){
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="about28.png" alt="AboutUs7" />').delay(5000).fadeOut(200, function(){ toImage8();});
+            }
+            function toImage8(){
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="about5.png" alt="AboutUs8" />').delay(5000).fadeOut(200, function(){ toImage9();});
+            }
+            function toImage9(){
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="about41.png" alt="AboutUs9" />').delay(5000).fadeOut(200, function(){ toImage10();});
+            }
+            function toImage10(){
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="about1.png" alt="AboutUs10" />').delay(5000).fadeOut(200, function(){ toImage11();});
+            }
+            function toImage11(){
+                $('#gallery').fadeIn(200).html('<img class="mySlides" src="about49.png" alt="AboutUs11" />').delay(5000).fadeOut(200, function(){ toImage1();});
+            }
+            
+            </script>
     </body>
 
   </html>
