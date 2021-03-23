@@ -283,9 +283,9 @@ body,html {
 }
 
 input[type=submit]{
-	background-color: #f3d691;
+	background-color: #1c2f3f;
   border: none;
-  color: #1c2f3f;
+  color: #fbfdfe;
 	font-family: Optima;
   padding: 15px 32px;
   text-align: center;
@@ -297,7 +297,7 @@ input[type=submit]{
 }
 
 input[type=submit]:hover{
-	background-color: #1c2f3f;
+	background-color: #f3d691;
   border: none;
   font-family: Optima;
   color: #fbfdfe;
@@ -312,9 +312,9 @@ input[type=submit]:hover{
 
 
 button{
-	background-color: #f3d691;
+	background-color: #1c2f3f;
   border: none;
-  color: #1c2f3f;
+  color: #fbfdfe;
 	font-family: Optima;
   padding: 15px 15px;
   text-align: center;
@@ -326,7 +326,7 @@ button{
 }
 
 button:hover{
-	background-color: #1c2f3f;
+	background-color: #f3d691;
   border: none;
   font-family: Optima;
   color: #fbfdfe;
