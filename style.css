@@ -181,11 +181,18 @@ body,html {
 				float:center;
 
 		}
-		.mySlides{
+		.newSlides{
 				display:block;
-				width: 450px;
-				height:350px;
-				margin: 1% 20% 1% 34%;
+				width: 40%;
+				height:20%;
+				margin: 1% 30% 1% 30%;
+		}
+
+		.newerSlides{
+				display:block;
+				width: 40%;
+				height:20%;
+				margin: 1% 30% 1% 30%;
 		}
 
 		.w3-button:hover{
